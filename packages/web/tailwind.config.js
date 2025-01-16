@@ -1,8 +1,15 @@
-/** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin');
-const path = require('path');
+import plugin from 'tailwindcss/plugin';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { createRequire } from 'module';
 
-module.exports = {
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: ['class'],
   content: [
     './index.html',
